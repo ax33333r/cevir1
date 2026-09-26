@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HızlıÇeviri: Almanca öğrenenler için masaüstü widget'ı</title>
+<meta name="description" content="Almanca metni kopyala, saniyeler içinde Türkçesini gör. Artikel, diğer anlamlar, kelime defteri, notlar ve takvim tek widget'ta. Windows için.">
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="style.css">
+<style>@media (max-width: 820px) { .plus { display: none; } }</style>
+<script>
+  // Kayıtlı temayı sayfa çizilmeden önce uygula (yanıp sönmeyi önler)
+  try { var t = localStorage.getItem('hc-theme2'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand"><img src="assets/icon.png" alt=""> HızlıÇeviri</div>
+    <nav>
+      <a href="#ozellikler">Özellikler</a>
+      <a href="#kurulum">Kurulum</a>
+      <a href="#sss">SSS</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Temayı değiştir" title="Açık / koyu tema">◐</button>
+    </nav>
+  </header>
+
+  <!-- KAHRAMAN -->
+  <div class="hero">
+    <div class="grid-bg" aria-hidden="true">
+      <i class="plus" style="left:25%;top:33.34%"></i><i class="plus" style="left:50%;top:33.34%"></i><i class="plus" style="left:75%;top:33.34%"></i>
+      <i class="plus" style="left:25%;top:66.68%"></i><i class="plus" style="left:50%;top:66.68%"></i><i class="plus" style="left:75%;top:66.68%"></i>
+    </div>
+
+    <h1 class="wordmark" aria-label="Hızlı Çeviri"><span class="br" aria-hidden="true">[</span><span>Hızlı Çeviri</span><span class="br" aria-hidden="true">]</span></h1>
+
+    <div class="stage">
+      <div class="tag"><b>Masaüstü widget</b>Almanca öğrenenler için<br><br><b>Windows 10 / 11</b></div>
+
+      <!-- MASKOT: astronot köpek -->
+      <svg class="mascot" viewBox="-30 0 360 370" role="img" aria-label="Astronot kıyafetli sevimli köpek maskotu">
+        <style>
+          .o  { stroke: #1b1240; stroke-width: 5; stroke-linejoin: round; stroke-linecap: round; }
+          .o3 { stroke: #1b1240; stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; }
+          .lo { stroke: #1b1240; stroke-width: 31; fill: none; stroke-linecap: round; }
+          .li { stroke: #fff; stroke-width: 21; fill: none; stroke-linecap: round; }
+        </style>
+
+        <!-- yıldız parıltıları -->
+        <path class="twinkle" d="M-6 60 q0 -12 12 -12 q-12 0 -12 -12 q0 12 -12 12 q12 0 12 12z" fill="#5ee7ff"/>
+        <path class="twinkle d2" d="M300 70 q0 -14 14 -14 q-14 0 -14 -14 q0 14 -14 14 q14 0 14 14z" fill="#b58cff"/>
+        <path class="twinkle d3" d="M296 214 q0 -9 9 -9 q-9 0 -9 -9 q0 9 -9 9 q9 0 9 9z" fill="#5ee7ff"/>
+        <circle class="twinkle d2" cx="-12" cy="200" r="4" fill="#ff87af"/>
+        <circle class="twinkle d3" cx="34" cy="20" r="3.5" fill="#b58cff"/>
+
+        <!-- anten -->
+        <path class="o" d="M150 40 V20" fill="none"/>
+        <circle class="o" cx="150" cy="15" r="8" fill="#5ee7ff"/>
+
+        <!-- bacaklar + botlar -->
+        <rect class="o" x="112" y="290" width="34" height="46" rx="14" fill="#fff"/>
+        <rect class="o" x="154" y="290" width="34" height="46" rx="14" fill="#fff"/>
+        <rect class="o" x="104" y="322" width="48" height="28" rx="13" fill="#b58cff"/>
+        <rect class="o" x="148" y="322" width="48" height="28" rx="13" fill="#b58cff"/>
+
+        <!-- gövde -->
+        <rect class="o" x="96" y="196" width="108" height="108" rx="38" fill="#fff"/>
+        <rect class="o3" x="120" y="228" width="60" height="36" rx="10" fill="#e9e2ff"/>
+        <circle class="o3" cx="137" cy="246" r="6.5" fill="#5ee7ff"/>
+        <circle class="o3" cx="163" cy="246" r="6.5" fill="#ff87af"/>
+
+        <!-- sol kol: selam veriyor -->
+        <path class="lo" d="M106 234 C70 236 54 208 62 176"/>
+        <path class="li" d="M106 234 C70 236 54 208 62 176"/>
+        <circle class="o" cx="62" cy="168" r="15" fill="#b58cff"/>
+        <!-- sağ kol -->
+        <path class="lo" d="M196 234 C226 246 238 264 232 284"/>
+        <path class="li" d="M196 234 C226 246 238 264 232 284"/>
+        <circle class="o" cx="232" cy="290" r="15" fill="#b58cff"/>
+
+        <!-- kemik -->
+        <g transform="translate(262 150) rotate(-28)">
+          <g class="o3" fill="#fff"><rect x="-25" y="-6.5" width="50" height="13" rx="6"/><circle cx="-27" cy="-7" r="8"/><circle cx="-27" cy="7" r="8"/><circle cx="27" cy="-7" r="8"/><circle cx="27" cy="7" r="8"/></g>
+          <g fill="#fff"><rect x="-25" y="-6.5" width="50" height="13" rx="6"/><circle cx="-27" cy="-7" r="8"/><circle cx="-27" cy="7" r="8"/><circle cx="27" cy="-7" r="8"/><circle cx="27" cy="7" r="8"/></g>
+        </g>
+
+        <!-- yaka -->
+        <ellipse class="o" cx="150" cy="194" rx="60" ry="15" fill="#b58cff"/>
+
+        <!-- kask içi -->
+        <circle cx="150" cy="118" r="82" fill="#d7f4ff"/>
+
+        <!-- köpek kafası -->
+        <path class="o3" d="M104 92 C80 96 76 142 94 158 C110 152 114 122 114 100Z" fill="#a86b3c"/>
+        <path class="o3" d="M196 92 C220 96 224 142 206 158 C190 152 186 122 186 100Z" fill="#a86b3c"/>
+        <ellipse class="o3" cx="150" cy="122" rx="50" ry="48" fill="#f4d7ad"/>
+        <ellipse cx="132" cy="112" rx="17" ry="16" fill="#a86b3c"/>
+        <circle cx="132" cy="115" r="6.5" fill="#1b1240"/><circle cx="168" cy="115" r="6.5" fill="#1b1240"/>
+        <circle cx="134.5" cy="112.5" r="2.2" fill="#fff"/><circle cx="170.5" cy="112.5" r="2.2" fill="#fff"/>
+        <ellipse class="o3" cx="150" cy="143" rx="25" ry="18" fill="#fff"/>
+        <ellipse cx="150" cy="135" rx="9.5" ry="6.5" fill="#1b1240"/>
+        <path class="o3" d="M150 140 V147 M150 147 C144 156 135 153 133 147 M150 147 C156 156 165 153 167 147" fill="none" stroke-width="3"/>
+        <path class="o3" d="M144 152 C144 167 156 167 156 152Z" fill="#ff87af" stroke-width="2.5"/>
+
+        <!-- kask camı -->
+        <circle class="o" cx="150" cy="118" r="82" fill="none" stroke-width="6"/>
+        <path d="M90 86 C99 62 120 50 146 47" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+        <circle cx="84" cy="104" r="3.5" fill="#fff" opacity=".9"/>
+      </svg>
+
+      <div class="tag r"><b>Almanca → Türkçe</b>DeepL çeviri motoru<br><br><b>Ücretsiz</b>hesap gerekmez</div>
+    </div>
+  </div>
+
+  <!-- HAKKINDA + İNDİR -->
+  <div class="about">
+    <div>
+      <span class="chip">Proje hakkında</span>
+      <p class="lead">Almanca okurken pencere değiştirme. Bir metni iki kez <kbd>Ctrl</kbd>+<kbd>C</kbd> ile kopyala; Türkçesi, kelimenin artikeli ve diğer anlamları masaüstündeki küçük bir kartta belirsin.</p>
+      <a class="btn" id="dl" href="indir/HizliCeviri-Kurulum.exe" download>⬇ Windows için indir</a>
+      <div class="meta" id="dlMeta">Windows 10 / 11 · ücretsiz · hesap gerekmez</div>
+    </div>
+    <ul class="index">
+      <li><span>[01]</span><a href="#ozellikler">Özellikler</a></li>
+      <li><span>[02]</span><a href="#kurulum">Kurulum</a></li>
+      <li><span>[03]</span><a href="#sss">Sık sorulanlar</a></li>
+    </ul>
+  </div>
+
+  <!-- 01 ÖZELLİKLER -->
+  <section id="ozellikler">
+    <span class="chip">[01]</span>
+    <h2 class="h-xl">Özellikler</h2>
+    <p class="sub">Ders çalışırken pencere değiştirmeden, akışı bozmadan.</p>
+    <div class="split">
+      <div class="mock" aria-hidden="true">
+        <div class="tabs"><span class="tab on">Çeviri</span><span class="tab">Geçmiş</span><span class="tab">Defter</span></div>
+        <div class="box"><small>Almanca</small>Ich lerne jeden Tag neue <span class="known">Wörter</span>.</div>
+        <div class="box"><small>Türkçe</small>Her gün yeni kelimeler öğreniyorum.</div>
+        <div class="box card"><span class="die">die</span> <b>Sprache</b> <span class="pill">dil</span> <span class="pill">konuşma</span> <span class="pill">lisan</span></div>
+      </div>
+      <div class="cards">
+        <div class="feat"><div class="n">01</div><h3>Kopyala, çevrilsin</h3><p>Çift Ctrl+C ile çeviri kartı açılır. Klavyeni dinlemez; sadece panodaki değişikliğe bakar.</p></div>
+        <div class="feat"><div class="n">02</div><h3>Artikel ve anlamlar</h3><p>Kelimeye tıkla: <span class="der">der</span> / <span class="die">die</span> / das ve diğer anlamları Türkçe gör.</p></div>
+        <div class="feat"><div class="n">03</div><h3>Kelime defteri</h3><p>Kaydettiğin kelimeler cümlelerde yeşil görünür. Çekimli halleri de tanınır.</p></div>
+        <div class="feat"><div class="n">04</div><h3>Çeviri geçmişi</h3><p>Daha önce baktığın her şey yerinde; tekrar çevirmene gerek kalmaz.</p></div>
+        <div class="feat"><div class="n">05</div><h3>Notlar ve takvim</h3><p>Masaüstünde en altta duran kartlar. Diğer pencereleri rahatsız etmez.</p></div>
+        <div class="feat"><div class="n">06</div><h3>Koyu ve açık tema</h3><p>Kozmik koyu tema ya da yumuşak pastel açık tema. Kartları istediğin boyuta getir.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 KURULUM -->
+  <section id="kurulum">
+    <span class="chip">[02]</span>
+    <h2 class="h-xl">Kurulum</h2>
+    <p class="sub">Yaklaşık iki dakika.</p>
+    <ol class="steps">
+      <li><div><b>İndir</b> ve kurulum dosyasını çalıştır.</div></li>
+      <li><div><b>DeepL anahtarını ekle.</b> Çeviriyi DeepL yapar. İlk çeviride açılan pencereye anahtarı yapıştır (sonradan tepsi simgesine sağ tık → "DeepL anahtarı…").</div></li>
+      <li><div><b>Kartı aç.</b> Görev çubuğundaki tepsi simgesinden kartları aç, bir Almanca metni iki kez <kbd>Ctrl</kbd>+<kbd>C</kbd> ile kopyala.</div></li>
+    </ol>
+  </section>
+
+  <!-- 03 SSS -->
+  <section id="sss">
+    <span class="chip">[03]</span>
+    <h2 class="h-xl">Sık sorulanlar</h2>
+    <p class="sub"></p>
+    <details><summary>Verilerim nerede duruyor?</summary><p>Geçmiş, defter, notlar ve takvim yalnızca senin bilgisayarında tutulur. Çevrilen metin çeviri için DeepL'e gönderilir; başka yere gönderilmez.</p></details>
+    <details><summary>Windows "bilinmeyen yayıncı" uyarısı veriyor, neden?</summary><p>Uygulama henüz kod imzalı değil. Windows bu yüzden SmartScreen uyarısı gösterebilir. Dosyayı bu sayfadan indirdiysen "Ek bilgi → Yine de çalıştır" ile devam edebilirsin.</p></details>
+    <details><summary>Ücretsiz mi?</summary><p>Uygulama ücretsiz. Çeviri DeepL üzerinden yapıldığı için kullanım kotası DeepL hesabının koşullarına bağlıdır.</p></details>
+    <details><summary>Mac veya telefon var mı?</summary><p>Şimdilik yalnızca Windows.</p></details>
+  </section>
+
+  <footer>
+    <div class="big">Viel Erfolg!</div>
+    HızlıÇeviri · Sözlük verisi Wiktionary'den (CC BY-SA) · Çeviri: DeepL
+  </footer>
+</div>
+
+<script>
+  // Tema düğmesi
+  var btn = document.getElementById('themeBtn');
+  btn.addEventListener('click', function () {
+    var cur = document.documentElement.dataset.theme || 'light';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('hc-theme2', next); } catch (e) {}
+  });
+
+  // İndirme dosyası yoksa düğmeyi "yakında" yap (dosya indir/ klasörüne konunca kendiliğinden açılır)
+  var dl = document.getElementById('dl'), meta = document.getElementById('dlMeta');
+  fetch(dl.getAttribute('href'), { method: 'HEAD' }).then(function (r) {
+    if (!r.ok) throw 0;
+    var n = r.headers.get('content-length');
+    if (n) meta.textContent += ' · ' + Math.round(n / 1048576) + ' MB';
+  }).catch(function () {
+    dl.classList.add('off'); dl.removeAttribute('href'); dl.removeAttribute('download');
+    dl.textContent = 'Sürüm yakında';
+    meta.textContent = 'İlk sürüm hazırlanıyor.';
+  });
+</script>
+</body>
+</html>
