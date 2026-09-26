@@ -118,8 +118,8 @@
     <div>
       <span class="chip">Proje hakkında</span>
       <p class="lead">Almanca okurken pencere değiştirme. Bir metni iki kez <kbd>Ctrl</kbd>+<kbd>C</kbd> ile kopyala; Türkçesi, kelimenin artikeli ve diğer anlamları masaüstündeki küçük bir kartta belirsin.</p>
-      <a class="btn" id="dl" href="indir/HizliCeviri-Kurulum.exe" download>⬇ Windows için indir</a>
-      <div class="meta" id="dlMeta">Windows 10 / 11 · ücretsiz · hesap gerekmez</div>
+      <a class="btn" id="dl" href="https://github.com/ax33333r/cevir1/releases/download/v0.1.0/HizliCeviri-Kurulum-0.1.0.exe">⬇ Windows için indir</a>
+      <div class="meta" id="dlMeta">Windows 10 / 11 · ücretsiz · hesap gerekmez · yaklaşık 107 MB · sürüm 0.1.0</div>
     </div>
     <ul class="index">
       <li><span>[01]</span><a href="#ozellikler">Özellikler</a></li>
@@ -188,18 +188,6 @@
     var next = cur === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = next;
     try { localStorage.setItem('hc-theme2', next); } catch (e) {}
-  });
-
-  // İndirme dosyası yoksa düğmeyi "yakında" yap (dosya indir/ klasörüne konunca kendiliğinden açılır)
-  var dl = document.getElementById('dl'), meta = document.getElementById('dlMeta');
-  fetch(dl.getAttribute('href'), { method: 'HEAD' }).then(function (r) {
-    if (!r.ok) throw 0;
-    var n = r.headers.get('content-length');
-    if (n) meta.textContent += ' · ' + Math.round(n / 1048576) + ' MB';
-  }).catch(function () {
-    dl.classList.add('off'); dl.removeAttribute('href'); dl.removeAttribute('download');
-    dl.textContent = 'Sürüm yakında';
-    meta.textContent = 'İlk sürüm hazırlanıyor.';
   });
 </script>
 </body>
